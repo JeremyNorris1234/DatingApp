@@ -9,7 +9,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppComponent } from './app.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './_services/auth.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChanges } from './_guards/preventUnsavedChanges.guard';
@@ -30,6 +30,7 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { AlertifyService } from './_services/alertify.service';
 import { FileUploadModule } from 'ng2-file-upload';
+import { TimeagoModule } from 'ngx-timeago';
 
 
 export function tokenGetter(){
@@ -54,11 +55,13 @@ export function tokenGetter(){
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgxGalleryModule,
     TabsModule.forRoot(),
     BsDropdownModule.forRoot(),
     FileUploadModule,
+    TimeagoModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({
       config: {
